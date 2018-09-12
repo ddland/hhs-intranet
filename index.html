@@ -8,10 +8,10 @@
   padding: 0 4px;
 }
 
-/* Create four equal columns that sits next to each other */
+/* Create six equal columns that sits next to each other */
 .column {
-  flex: 20%;
-  max-width: 10%;
+  flex: 12.5%;
+  max-width: 12.5%;
   padding: 0 4px;
 }
 
@@ -22,6 +22,14 @@
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 1000px) {
+  .column {
+    flex: 25%;
+    max-width: 25%;
+  }
+}
+
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) {
   .column {
     flex: 50%;
@@ -30,7 +38,7 @@
 }
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 400px) {
   .column {
     flex: 100%;
     max-width: 100%;
@@ -44,7 +52,6 @@
 			<div class='column'>
 				<a href=http://roosters.hhs.nl/ target="_blank"> <img src="AlgLesTentRstr.jpg">rooster</a>
 				<a href=https://blackboard.hhs.nl target="_blank"> <img src="blackboard.jpg" >blackboard</a>
-				<a href=https://nieuws.hhs.nl target="_blank"><img src="hnieuws.jpg">hnieuws</a>
 				<a href=http://roosters-reserveer.hhs.nl/ target="_blank"> <img src="ReserverenOndRmt.jpg">reserveren ruimten</a>
 			</div>
 			<div class='column'>
@@ -60,11 +67,15 @@
 			<div class='column'>
 				<a href=https://dehaagsehogeschool.sharepoint.com/sites/medewerkersnet target="_blank"> <img src="medewerkersnet.jpg">medewerkersnet</a>
 				<a href=https://dehaagsehogeschool.sharepoint.com/sites/studentennet target="_blank"> <img src="studentennet.jpg">studentennet</a>
+				<a href=https://nieuws.hhs.nl target="_blank"><img src="hnieuws.jpg">hnieuws</a>
 			</div>
 			<div class='column'>
 				<a href=https://outlook.office365.com/owa/?realm=hhs.nl target="_blank"> <img src="outlook.png">webmail</a>
 				<a href=https://www.office.com/?auth=2&home=1&from=ShellLogo target="_blank"><img src="office365.jpg">office 365</a>
+			</div>
+			<div class='column'>
 				<a href=https://www.github.com/hhs-tn target="_blank"><img src="github.png">Github TN</a>
+				<a href=https://www.masteringphysics.com/site/login.html target="_blank"><img src="pearson.jpg">MasteringPhysics login</a>
 			</div>
 		</div>
 	</body>

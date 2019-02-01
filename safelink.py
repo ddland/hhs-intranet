@@ -84,7 +84,6 @@ head = """
 			<div class='column'>
                                 <a href=https://dehaagsehogeschool.sharepoint.com/sites/medewerkersnet target="_blank"><img src="afbeeldingen/wiewatwaar.jpg"></a>
 				<form target="_blank" method="get" action="https://dehaagsehogeschool.sharepoint.com/sites/medewerkersnet/_layouts/15/search.aspx/people"><input type="text" name="q"></form> 
-				<a href=https://dehaagsehogeschool.sharepoint.com/sites/medewerkersnet target="_blank"> <img src="afbeeldingen/medewerkersnet.jpg">medewerkersnet</a>
 				<a href=https://dehaagsehogeschool.sharepoint.com/sites/studentennet target="_blank"> <img src="afbeeldingen/studentennet.jpg">studentennet (algemeen)</a>
 				<a href=https://dehaagsehogeschool.sharepoint.com/sites/TIS_TN-VT target="_blank"> <img src="afbeeldingen/studentennetTN.jpg">studentennet (TN)</a>
 				<a href=https://nieuws.hhs.nl target="_blank"><img src="afbeeldingen/hnieuws.jpg">hnieuws</a>

@@ -1,4 +1,4 @@
-DirectoryIndex safelink.py
+DirectoryIndex index.py
 
 Options +ExecCGI
 AddHandler cgi-script .py

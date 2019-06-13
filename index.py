@@ -9,10 +9,11 @@ print("Content-type: text/html")
 print()
 
 url_col1 = [
-    ('standaard','https://roosters.hhs.nl/','AlgLesTentRstr.jpg','rooster'),
+    ('standaard','http://roosters.hhs.nl/','AlgLesTentRstr.jpg','rooster'),
 	('standaard','https://blackboard.hhs.nl','blackboard.jpg','blackboard'),
-    ('standaard','https://roosters-reserveer.hhs.nl/','ReserverenOndRmt.jpg','reserveren ruimten'),
-    ('standaard','https://roosters-concept.hhs.nl/','concept-rooster.jpg','rooster'),
+    ('standaard','http://roosters-reserveer.hhs.nl/','ReserverenOndRmt.jpg','reserveren ruimten'),
+    ('standaard','http://roosters-concept.hhs.nl/','concept-rooster.jpg','rooster'),
+    ('standaard','https://hhs.xedule.nl','xedule.jpeg','Xedule'),
 ]
 
 url_col2 = [
@@ -21,6 +22,12 @@ url_col2 = [
     ('standaard','https://hhs.topdesk.net/tas/public/','iFrontOffice.jpg', 'iFrontoffice'),
 ]
 
+url_col25 = [
+	('standaard', 'https://dehaagsehogeschool.sharepoint.com/sites/TechnischeNatuurkunde', 'sharepointTN.png', 'sharepoint TN'),
+	('standaard', 'https://dehaagsehogeschool.sharepoint.com/sites/pdc/nl/TIS', 'sharepointTIS.png', 'sharepoint TIS'),
+	('standaard', 'https://dehaagsehogeschool.sharepoint.com/sites/octn', 'sharepointOC.png', 'sharepoint OC'),
+	('standaard', 'https://hhstechniek.nl/', 'hhs_techniek.png', 'HHS Techniek'),
+]
 url_col3 = [
     ('standaard','https://desktopmedewerker.hhs.nl', 'applicatieportaal.jpg', 'desktop'),
     ('standaard','https://toetsportaal.hhs.nl/','toetsportaal.jpg', 'toetsportaal'),
@@ -45,6 +52,7 @@ url_col5 = [
     ('standaard','https://outlook.office365.com/owa/?realm=hhs.nl','outlook.png','webmail'),
     ('standaard','https://www.office.com/?auth=2&home=1&from=ShellLogo','office365.jpg', 'Office 365'),
     ('standaard','https://www.dehaagsehogeschool.nl/studievoorzieningen/bibliotheek','bibliotheek.jpg','Bibliotheek'),
+    ('standaard','https://qv.hhs.nl/','qlikview.jpg','Qlik'),
 ]
 
 url_col6 = [
@@ -54,7 +62,7 @@ url_col6 = [
     ('standaard','http://quest.eb.com/', 'britannica.png', 'Britannica ImageQuest'),
 ]
  
-urls = [url_col1, url_col2, url_col3, url_col4, url_col5, url_col6]
+urls = [url_col1, url_col2, url_col25, url_col3, url_col4, url_col5, url_col6]
  
 head = """
 <!DOCTYPE html>
@@ -62,7 +70,8 @@ head = """
 	<head>
 	<title> Intranet HHS </title>
 	<link rel="shortcut icon" href=favicon.ico>
-    <link rel="stylesheet" type="text/css" href="layout.css">
+    	<link rel="stylesheet" type="text/css" href="layout.css">
+ 	<link rel="icon" href="favicon.ico" type="image/ico">
 	</head>
 	<body>
 """

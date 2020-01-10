@@ -40,8 +40,12 @@ url_col3 = [
 url_col4 = [
     ('form','https://dehaagsehogeschool.sharepoint.com/sites/medewerkersnet','wiewatwaar.jpg',
         '<form target="_blank" method="get" \
+        action="https://dehaagsehogeschool.sharepoint.com/sites/medewerkersnet/_layouts/15/search.aspx">\
+        <input type="text" value="zoek in alles" name="q"></form>'),
+    ('form','https://dehaagsehogeschool.sharepoint.com/sites/medewerkersnet','wiewatwaar.jpg',
+        '<form target="_blank" method="get"  \
         action="https://dehaagsehogeschool.sharepoint.com/sites/medewerkersnet/_layouts/15/search.aspx/people">\
-        <input type="text" name="q"></form>'),
+        <input type="text" value="zoek in wiewatwaar" name="q"></form>'),
     ('standaard','https://dehaagsehogeschool.sharepoint.com/sites/studentennet', 'studentennet.jpg',
         'studentennet (algemeen)'),
     ('standaard','https://dehaagsehogeschool.sharepoint.com/sites/TIS_TN-VT', 'studentennetTN.jpg',

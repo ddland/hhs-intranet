@@ -20,6 +20,7 @@ url_col2 = [
 	('standaard','https://docent.osiris.hhs.nl/','osirisdocent.jpg','osiris'),
     ('standaard','https://hhs-onstage.xebic.com/','onstage.jpg', 'onstage'),
     ('standaard','https://hhs.topdesk.net/tas/public/','iFrontOffice.jpg', 'iFrontoffice'),
+    ('standaard','https://hhs.topdesk.net/tas/public/ssp/content/page/locationreservationplanner','reserveren_vergaderruimte.png', 'reserveren vergaderruimte'),
 ]
 
 url_col25 = [

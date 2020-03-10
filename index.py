@@ -26,6 +26,7 @@ url_col3 = [
 	('standaard', 'https://dehaagsehogeschool.sharepoint.com/sites/TIS_TN-VT', 'sharepointTN.png', 'sharepoint TN'),
 	('standaard', 'https://dehaagsehogeschool.sharepoint.com/sites/pdc/nl/TIS', 'sharepointTIS.png', 'sharepoint TIS'),
 	('standaard', 'https://dehaagsehogeschool.sharepoint.com/sites/octn', 'sharepointOC.png', 'sharepoint OC'),
+	('standaard', 'https://dehaagsehogeschool.sharepoint.com/sites/Organisatie/SitePages/medezeggenschap.aspx', 'medezeggenschap.png', 'Medenzeggenschap'),
 	('standaard', 'https://hhstechniek.nl/', 'hhs_techniek.png', 'HHS Techniek'),
 ]
 url_col4 = [

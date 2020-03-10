@@ -33,11 +33,12 @@ body {
 
 .grid-item {
   border: 1px solid black;
-  min-height: 270px;
+  min-height: 260px;
   -ms-flex: auto;
   padding: 0;
   margin: 0;
   align-self: center;
+  max-height:100%;
 }
 
 .grid-row a {
@@ -52,16 +53,19 @@ figure {
 figure img {
   vertical-align: top;
   width: 100%;
+  max-height:100%;
   }
 
 figure figcaption {
   text-align: center;
+  max-height:100%;
   width: 100%;
   }
 
 figure figcaption input {
   margin: 10pt;
   width: 90%;
+  max-height:100%;
   }
 
 @media(max-width: 1333px) {
@@ -69,14 +73,16 @@ figure figcaption input {
     grid-template-columns: repeat(6,1fr);
   }
   .grid-item {
+  min-height: 240px;
   }
 }
 
-@media(max-width: 815px) {
+@media(max-width: 950px) {
   .container {
     grid-template-columns: repeat(4,1fr);
   }
   .grid-item {
+  min-height: 220px;
   }
 }
 
@@ -85,5 +91,6 @@ figure figcaption input {
     grid-template-columns: repeat(2,1fr);
   }
   .grid-item {
+  min-height: 220px;
   }
 }

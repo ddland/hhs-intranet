@@ -13,7 +13,6 @@ url_col1 = [
 	('standaard','https://blackboard.hhs.nl','blackboard.jpg','blackboard'),
     ('standaard','http://roosters-reserveer.hhs.nl/','ReserverenOndRmt.jpg','reserveren ruimten'),
     ('standaard','http://roosters-concept.hhs.nl/','concept-rooster.jpg','rooster'),
-    ('standaard','https://hhs.xedule.nl','xedule.jpeg','Xedule'),
 ]
 
 url_col2 = [
@@ -23,13 +22,13 @@ url_col2 = [
     ('standaard','https://hhs.topdesk.net/tas/public/ssp/content/page/locationreservationplanner','reserveren_vergaderruimte.png', 'reserveren vergaderruimte'),
 ]
 
-url_col25 = [
-	('standaard', 'https://dehaagsehogeschool.sharepoint.com/sites/TechnischeNatuurkunde', 'sharepointTN.png', 'sharepoint TN'),
+url_col3 = [
+	('standaard', 'https://dehaagsehogeschool.sharepoint.com/sites/TIS_TN-VT', 'sharepointTN.png', 'sharepoint TN'),
 	('standaard', 'https://dehaagsehogeschool.sharepoint.com/sites/pdc/nl/TIS', 'sharepointTIS.png', 'sharepoint TIS'),
 	('standaard', 'https://dehaagsehogeschool.sharepoint.com/sites/octn', 'sharepointOC.png', 'sharepoint OC'),
 	('standaard', 'https://hhstechniek.nl/', 'hhs_techniek.png', 'HHS Techniek'),
 ]
-url_col3 = [
+url_col4 = [
     ('standaard','https://desktopmedewerker.hhs.nl', 'applicatieportaal.jpg', 'desktop'),
     ('standaard','https://toetsportaal.hhs.nl/','toetsportaal.jpg', 'toetsportaal'),
     ('standaard','https://sap-apps.hhs.nl/sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchpad.html?sap-language=NL',
@@ -37,37 +36,41 @@ url_col3 = [
     ('standaard','https://webforms.hhs.nl/private/password/wijzig-wachtwoord.php','wachtwoord.png', 'wijzig wachtwoord'),
 ]
 
-url_col4 = [
+url_col5 = [
     ('form','https://dehaagsehogeschool.sharepoint.com/sites/medewerkersnet','wiewatwaar.jpg',
         '<form target="_blank" method="get" \
         action="https://dehaagsehogeschool.sharepoint.com/sites/medewerkersnet/_layouts/15/search.aspx">\
-        <input type="text" value="zoek in alles" name="q"></form>'),
+        <input type="text" placeholder="zoek in alles" name="q"></form>'),
     ('form','https://dehaagsehogeschool.sharepoint.com/sites/medewerkersnet','wiewatwaar.jpg',
         '<form target="_blank" method="get"  \
         action="https://dehaagsehogeschool.sharepoint.com/sites/medewerkersnet/_layouts/15/search.aspx/people">\
-        <input type="text" value="zoek in wiewatwaar" name="q"></form>'),
+        <input type="text" placeholder="zoek naar personen" name="q"></form>'),
     ('standaard','https://dehaagsehogeschool.sharepoint.com/sites/studentennet', 'studentennet.jpg',
         'studentennet (algemeen)'),
     ('standaard','https://dehaagsehogeschool.sharepoint.com/sites/TIS_TN-VT', 'studentennetTN.jpg',
         'studentennet (TN)'),
-    ('standaard','https://nieuws.hhs.nl', 'hnieuws.jpg', 'hnieuws'),
 ]
 
-url_col5 = [
+url_col6 = [
     ('standaard','https://outlook.office365.com/owa/?realm=hhs.nl','outlook.png','webmail'),
     ('standaard','https://www.office.com/?auth=2&home=1&from=ShellLogo','office365.jpg', 'Office 365'),
     ('standaard','https://www.dehaagsehogeschool.nl/studievoorzieningen/bibliotheek','bibliotheek.jpg','Bibliotheek'),
     ('standaard','https://qv.hhs.nl/','qlikview.jpg','Qlik'),
 ]
 
-url_col6 = [
+url_col7 = [
     ('standaard','https://www.github.com/hhs-tn','github.png','GitHub TN'),
     ('standaard','https://www.masteringphysics.com/site/login.html','pearson.jpg', 'Mastering Physics'),
     ('standaard','https://hub.docker.com/', 'docker.jpg', 'Docker Hub'),
     ('standaard','http://quest.eb.com/', 'britannica.png', 'Britannica ImageQuest'),
 ]
  
-urls = [url_col1, url_col2, url_col25, url_col3, url_col4, url_col5, url_col6]
+url_col8 = [
+    ('standaard','https://edu.nl/manage/','surf_url.png','url shortener'),
+    ('standaard','https://nieuws.hhs.nl', 'hnieuws.jpg', 'hnieuws'),
+    ('standaard','https://hhs.xedule.nl','xedule.jpeg','Xedule'),
+]
+urls = [url_col1, url_col2, url_col3, url_col4, url_col5, url_col6, url_col7, url_col8]
  
 head = """
 <!DOCTYPE html>

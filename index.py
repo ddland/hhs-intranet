@@ -27,7 +27,6 @@ url_col3 = [
 	('standaard', 'https://dehaagsehogeschool.sharepoint.com/sites/pdc/nl/TIS', 'sharepointTIS.png', 'sharepoint TIS'),
 	('standaard', 'https://dehaagsehogeschool.sharepoint.com/sites/octn', 'sharepointOC.png', 'sharepoint OC'),
 	('standaard', 'https://dehaagsehogeschool.sharepoint.com/sites/Organisatie/SitePages/medezeggenschap.aspx', 'medezeggenschap.png', 'Medenzeggenschap'),
-	('standaard', 'https://hhstechniek.nl/', 'hhs_techniek.png', 'HHS Techniek'),
 ]
 url_col4 = [
     ('standaard','https://desktopmedewerker.hhs.nl', 'applicatieportaal.jpg', 'desktop'),
@@ -54,6 +53,7 @@ url_col5 = [
 
 url_col6 = [
     ('standaard','https://outlook.office365.com/owa/?realm=hhs.nl','outlook.png','webmail'),
+    ('standaard','https://aka.ms/mstfw','teams.png', 'Teams'),
     ('standaard','https://www.office.com/?auth=2&home=1&from=ShellLogo','office365.jpg', 'Office 365'),
     ('standaard','https://www.dehaagsehogeschool.nl/studievoorzieningen/bibliotheek','bibliotheek.jpg','Bibliotheek'),
     ('standaard','https://qv.hhs.nl/','qlikview.jpg','Qlik'),
@@ -68,7 +68,9 @@ url_col7 = [
  
 url_col8 = [
     ('standaard','https://edu.nl/manage/','surf_url.png','url shortener'),
+    ('standaard','https://hhs.data.surfsara.nl/','researchdrive.png','ResearchDrive'),
     ('standaard','https://nieuws.hhs.nl', 'hnieuws.jpg', 'hnieuws'),
+	('standaard', 'https://hhstechniek.nl/', 'hhs_techniek.png', 'HHS Techniek'),
     ('standaard','https://hhs.xedule.nl','xedule.jpeg','Xedule'),
 ]
 urls = [url_col1, url_col2, url_col3, url_col4, url_col5, url_col6, url_col7, url_col8]

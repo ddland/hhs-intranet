@@ -64,6 +64,7 @@ url_col7 = [
     ('standaard','https://www.masteringphysics.com/site/login.html','pearson.jpg', 'Mastering Physics'),
     ('standaard','https://hub.docker.com/', 'docker.jpg', 'Docker Hub'),
     ('standaard','http://quest.eb.com/', 'britannica.png', 'Britannica ImageQuest'),
+    ('standaard','https://eva.eduroam.nl/','euduroam.png', 'Euduroam visitor'),
 ]
  
 url_col8 = [

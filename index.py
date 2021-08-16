@@ -1,143 +1,67 @@
 #!/usr/bin/env python3
 
 import cgi
-import cgitb; cgitb.enable()  # for troubleshooting
+#import cgitb; cgitb.enable()
 import urllib
-
+import sys
+import html_templates
 
 print("Content-type: text/html")
 print()
 
-url_col1 = [
-    ('standaard','http://roosters.hhs.nl/','AlgLesTentRstr.jpg','rooster'),
-	('standaard','https://blackboard.hhs.nl','blackboard.jpg','blackboard'),
-    ('standaard','http://roosters-reserveer.hhs.nl/','ReserverenOndRmt.jpg','reserveren ruimten'),
-    ('standaard','http://roosters-concept.hhs.nl/','concept-rooster.jpg','rooster'),
-]
+def parse_datafile(data, grid):
+    for line in data:
+        # skip empty lines and comments
+        if line[0] == "#" or line.isspace():
+            continue
+        cols = line.split(',')
+        colnum = int(cols[0])
+        deletecolumn = False
 
-url_col2 = [
-	('standaard','https://docent.osiris.hhs.nl/','osirisdocent.jpg','osiris'),
-    ('standaard','https://hhs-onstage.xebic.com/','onstage.jpg', 'onstage'),
-    ('standaard','https://hhs.topdesk.net/tas/public/','iFrontOffice.jpg', 'iFrontoffice'),
-    ('standaard','https://hhs.topdesk.net/tas/public/ssp/content/page/locationreservationplanner','reserveren_vergaderruimte.png', 'reserveren vergaderruimte'),
-]
+        # cleanup whitespace
+        for ii, col in enumerate(cols):
+            cols[ii] = col.strip()
+        if cols[1] == 'standaard':
+            htmlstring = [cols[1],html_templates.template_card.substitute(url=cols[3], img=cols[4], text=cols[2])]
+        elif cols[1] == 'form':
+            htmlstring = [cols[1],html_templates.template_card_form.substitute(url=cols[3], img=cols[4], text=cols[2])]
+        elif cols[1] == 'delete':
+            deletecolumn = True
+            if colnum in grid.keys():
+                grid.pop(colnum)
+                
+        if colnum in grid.keys():
+            if not deletecolumn:
+                grid[colnum].append(htmlstring)
+        else:
+            if not deletecolumn:
+                grid[colnum] = [htmlstring]
 
-url_col3 = [
-	('standaard', 'https://dehaagsehogeschool.sharepoint.com/sites/TIS_TN-VT', 'sharepointTN.png', 'sharepoint TN'),
-	('standaard', 'https://dehaagsehogeschool.sharepoint.com/sites/pdc/nl/TIS', 'sharepointTIS.png', 'sharepoint TIS'),
-	('standaard', 'https://dehaagsehogeschool.sharepoint.com/sites/octn', 'sharepointOC.png', 'sharepoint OC'),
-	('standaard', 'https://dehaagsehogeschool.sharepoint.com/sites/Organisatie/SitePages/medezeggenschap.aspx', 'medezeggenschap.png', 'Medenzeggenschap'),
-]
-url_col4 = [
-    ('standaard','https://desktopmedewerker.hhs.nl', 'applicatieportaal.jpg', 'desktop'),
-    ('standaard','https://toetsportaal.hhs.nl/','toetsportaal.jpg', 'toetsportaal'),
-    ('standaard','https://sap-apps.hhs.nl/sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchpad.html?sap-language=NL',
-        'MijnServiceplein.jpg','Mijn Serviceplein'),
-    ('standaard','https://webforms.hhs.nl/private/password/wijzig-wachtwoord.php','wachtwoord.png', 'wijzig wachtwoord'),
-]
+def get_maxrows(grid):
+    maxrows = 0
+    for key in sorted(grid.keys()):
+        if len(grid[key]) > maxrows:
+            maxrows = len(grid[key])
+    numbercols = sorted(grid.keys())[-1]
+    return (maxrows, numbercols+1)
 
-url_col5 = [
-    ('form','https://dehaagsehogeschool.sharepoint.com/sites/medewerkersnet','wiewatwaar.jpg',
-        '<form target="_blank" method="get" \
-        action="https://dehaagsehogeschool.sharepoint.com/sites/medewerkersnet/_layouts/15/search.aspx">\
-        <input type="text" placeholder="zoek in alles" name="q"></form>'),
-    ('form','https://dehaagsehogeschool.sharepoint.com/sites/medewerkersnet','wiewatwaar.jpg',
-        '<form target="_blank" method="get"  \
-        action="https://dehaagsehogeschool.sharepoint.com/sites/medewerkersnet/_layouts/15/search.aspx/people">\
-        <input type="text" placeholder="zoek naar personen" name="q"></form>'),
-    ('standaard','https://dehaagsehogeschool.sharepoint.com/sites/studentennet', 'studentennet.jpg',
-        'studentennet (algemeen)'),
-    ('standaard','https://dehaagsehogeschool.sharepoint.com/sites/TIS_TN-VT', 'studentennetTN.jpg',
-        'studentennet (TN)'),
-]
+def write_htmlgrid(grid, maxrows, numbercols, outputfile=sys.stdout):
+    # get number items, number rows (cols = 12)
+    for col in range(numbercols):
+        nrows = 0
+        if col in grid.keys():
+            for line in grid[col]:
+                print(line[1], file=outputfile)
+                nrows +=1
+        while nrows < maxrows:
+            print("<div class='card' style='background-color: rgba(158, 167, 0, 0.5);'></div>", file=outputfile)
+            nrows +=1
+        
+def add_userdata(username, data, grid):
+    with open("site_%s.md" %(username), "r") as fh:
+        data = fh.readlines()
+    parse_datafile(data, grid)
 
-url_col6 = [
-    ('standaard','https://outlook.office365.com/owa/?realm=hhs.nl','outlook.png','webmail'),
-    ('standaard','https://aka.ms/mstfw','teams.png', 'Teams'),
-    ('standaard','https://www.office.com/?auth=2&home=1&from=ShellLogo','office365.jpg', 'Office 365'),
-    ('standaard','https://www.dehaagsehogeschool.nl/studievoorzieningen/bibliotheek','bibliotheek.jpg','Bibliotheek'),
-    ('standaard','https://qv.hhs.nl/','qlikview.jpg','Qlik'),
-]
-
-url_col7 = [
-    ('standaard','https://www.github.com/hhs-tn','github.png','GitHub TN'),
-    ('standaard','https://www.masteringphysics.com/site/login.html','pearson.jpg', 'Mastering Physics'),
-    ('standaard','https://hub.docker.com/', 'docker.jpg', 'Docker Hub'),
-    ('standaard','http://quest.eb.com/', 'britannica.png', 'Britannica ImageQuest'),
-    ('standaard','https://eva.eduroam.nl/','euduroam.png', 'Euduroam visitor'),
-]
- 
-url_col8 = [
-    ('standaard','https://edu.nl/manage/','surf_url.png','url shortener'),
-    ('standaard','https://hhs.data.surfsara.nl/','researchdrive.png','ResearchDrive'),
-    ('standaard','https://nieuws.hhs.nl', 'hnieuws.jpg', 'hnieuws'),
-	('standaard', 'https://hhstechniek.nl/', 'hhs_techniek.png', 'HHS Techniek'),
-    ('standaard','https://hhs.xedule.nl','xedule.jpeg','Xedule'),
-]
-urls = [url_col1, url_col2, url_col3, url_col4, url_col5, url_col6, url_col7, url_col8]
- 
-head = """
-<!DOCTYPE html>
-<html>
-	<head>
-	<title> Intranet HHS </title>
-	<link rel="shortcut icon" href=favicon.ico>
-    	<link rel="stylesheet" type="text/css" href="layout.css">
- 	<link rel="icon" href="favicon.ico" type="image/ico">
-	</head>
-	<body>
-"""
-
-foot = """
-    </div> <!-- container -->
-    </body>
-    </html>
-    """
-   
-def print_blocks():
-    print(r'<div class="container">')
-    for row in urls:
-        print(r'<div class="grid-row">')
-        for item in row:
-            if item[0] == 'standaard':
-                print(r'''<div class="grid-item">
-                <a href={url} target="_blank">
-                <figure>
-                <img src="afbeeldingen/{img}">
-                <figcaption>{name}</figcaption>
-                </figure>
-                </a></div>'''.format(url=item[1], img=item[2],name=item[3]))
-            elif item[0] == 'form':
-                print(r'''<div class="grid-item">
-                <figure>
-                <a href={url} target="_blank">
-                <img src="afbeeldingen/{img}">
-                </a>
-                <figcaption>{name}</figcaption>
-                </figure>
-                </div>'''.format(url=item[1], img=item[2],name=item[3]))
-        print(r'</div> <!-- grid-row -->')
-    print(r'</div> <!-- container -->')
-
-def end_block():
-    print(r'''
-<div class="full-row">
-    Verwijder safelinks: 
-    <form method="post">
-        <input type="text" style="height:100px;" name="blob"/>
-    </form>
-</div>
-''')
-    
-def parse_blob(blob):
-    safe, url = blob.split('url=')
-    http = None
-    if url.find('^http') > 0:
-        http = True
-    if http:
-        print('<a href="%s" target=_blank>%s</a>'%(url,url))
-    else:
-        print('<a href="http://%s", target=_blank>%s</a>'%(url,url))
 
 def print_url(data):
     if data.find('url=') < 0:
@@ -155,29 +79,85 @@ def print_url(data):
             print('<a href="%s" target=_blank>%s</a><br/>'%(url,url))
         else:
             print('<a href="http://%s", target="_blank">%s</a><br/>'%(url,url))
-    
+        return url
+
+
 def parse_form(blob):
+    urls = []
     data = blob.split()
+    print("<p>Full text </p>")
+    print("""<div class="full-row", style="background-color:rgba(158, 167, 0, 0.5);">""")
     for line in data:
         if line[0:4] == 'http':
-            print_url(line)
-            print('<br>')
+            urls.append(print_url(line))
+        else:
+            line =line.encode('ascii', errors='ignore').decode('ascii')
+            print('%s' %str(line), end=' ')
+    print("")
+    print("</div>")
+    print("""<div class="full-row", style="background-color:rgba(158, 167, 0, 0.5);">""")
+    print("<p>URLS:</p>")
+    for line in urls:
+        print(line, "<br>")
 
-def test_form(form):
-    print(head)
-    print(html_form)
-    if 'blob' in form.keys():
-        blob = form['blob']
-        parse_form(blob.value)
-    print('<br/>')
-    print(foot)
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     form = cgi.FieldStorage()
-    print(head)
-    print_blocks()
-    end_block()
-    if 'blob' in form.keys():
-        blob = form['blob']
+    
+    filename="default.md"
+    htmloutput = sys.stdout #open('script_output.html', 'w')
+    grid = {}
+
+    if "sharepoint" in form.keys(): # sharepoint side, geen default!
+        sp = form.getvalue("sharepoint")
+        if isinstance(sp, str):
+            if sp == "derek":
+                with open("sharepoint/sharepoint_derek.md", "r") as fh:
+                    data = fh.readlines()
+                parse_datafile(data, grid)
+
+    if len(grid) < 1: 
+        with open(filename, "r") as fh:
+            data = fh.readlines()
+        parse_datafile(data, grid)
+
+
+    user = "TN"
+    if "user" in form.keys(): # usersettings file detected!
+        user = form.getvalue("user")
+        if isinstance(user, str):
+            if user == "derek":
+                add_userdata("derek", data, grid)
+            elif user == "voorbeeld":
+                add_userdata("voorbeeld", data, grid)
+            else:
+                user = "TN"
+
+
+    maxrows, numbercols = get_maxrows(grid)
+
+
+    print(html_templates.template_header.substitute(
+        maxrows  = maxrows,
+        maxrows2 = maxrows*2,
+        maxrows4 = maxrows*4,
+        maxrows8 = maxrows*6,
+        user = user.title(),
+        ), file=htmloutput)
+
+    write_htmlgrid(grid, maxrows, numbercols, htmloutput)
+    print("</section>", file=htmloutput) 
+
+    print(r'''
+<div class="full-row", style="background-color:rgba(158, 167, 0, 0.5);">
+    Verwijder safelinks: 
+    <form method="post">
+        <input type="text" style="height:100px;" name="blob"/>
+    </form>
+</div>
+    ''', file=htmloutput)
+
+    if "blob" in form.keys():
+        blob = form["blob"]
         parse_form(blob.value)
-    print(foot)
+
+    print(html_templates.template_footer.substitute(), file=htmloutput)

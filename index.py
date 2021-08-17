@@ -145,10 +145,10 @@ if __name__ == "__main__":
         ), file=htmloutput)
 
     write_htmlgrid(grid, maxrows, numbercols, htmloutput)
-    print("</section>", file=htmloutput) 
+    print("</div> <!-- card-container -->", file=htmloutput) 
 
     print(r'''
-<div class="full-row", style="background-color:rgba(158, 167, 0, 0.5);">
+<div class="full-row" style="background-color:rgba(158, 167, 0, 0.5);">
     Verwijder safelinks: 
     <form method="post">
         <input type="text" style="height:100px;" name="blob"/>
@@ -159,5 +159,10 @@ if __name__ == "__main__":
     if "blob" in form.keys():
         blob = form["blob"]
         parse_form(blob.value)
+
+    print("""
+<div class="fullrow" style="background-color:rgba(158, 167, 0, 0.5);"> 
+Aanpassingen of gepersonaliseerde omgeving? <a href="mailto:d.d.land@hhs.nl?subject=intranet website">Stuur een mailtje!</a>
+</div>""", file=htmloutput)
 
     print(html_templates.template_footer.substitute(), file=htmloutput)

@@ -1,18 +1,18 @@
 # col, type, name, url, image
-0, standaard, rooster, http://roosters.hhs.nl/, AlgLesTentRstr.jpg
-0, standaard, BB, https://blackboard.hhs.nl, blackboard.jpg
+0, standaard, rooster, https://roosters.hhs.nl/, AlgLesTentRstr.jpg
+0, standaard, Blackboard, https://blackboard.hhs.nl, blackboard.jpg
 0, standaard, osiris, https://docent.osiris.hhs.nl/, osirisdocent.jpg
 0, standaard, onstage, https://hhs-onstage.xebic.com/, onstage.jpg
 
-1, standaard, reserveren ruimten, http://roosters-reserveer.hhs.nl/, ReserverenOndRmt.jpg
+1, standaard, reserveren ruimten, https://roosters-reserveer.hhs.nl/, ReserverenOndRmt.jpg
 1, standaard, vergaderruimten, https://hhs.topdesk.net/tas/public/ssp/content/page/locationreservationplanner, reserveren_vergaderruimte.png
-1, standaard, evaluties, http://evaluaties.hhs.nl/, DiCe.jpg
+1, standaard, evaluties, https://evaluaties.hhs.nl/, DiCe.jpg
 1, standaard, xedule, https://hhs.xedule.nl, xedule.jpeg
 
 2, standaard, desktop, https://desktopmedewerkers-secureid.hhs.nl/, applicatieportaal.jpg
 2, standaard, toetsportaal, https://toetsportaal-secureid.hhs.nl/, toetsportaal.jpg
 
-3, standaard, concept roosters, http://roosters-concept.hhs.nl/, concept-rooster.jpg
+3, standaard, concept roosters, https://roosters-concept.hhs.nl/, concept-rooster.jpg
 3, standaard, iFrontoffice, https://hhs.topdesk.net/tas/public/, iFrontOffice.jpg
 3, standaard, Mijn Serviceplein, https://sap-apps.hhs.nl/sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchpad.html?sap-language=NL, MijnServiceplein.jpg
 3, standaard, wijzig wachtwoord, https://webforms.hhs.nl/private/password/wijzig-wachtwoord.php, wachtwoord.png
@@ -31,7 +31,7 @@
 6, standaard, office365, https://www.office.com/?auth=2&home=1&from=ShellLogo, office365.jpg
 
 7, standaard, bibliotheek, https://www.dehaagsehogeschool.nl/studievoorzieningen/bibliotheek, bibliotheek.jpg
-7, standaard, ImageQuest, http://quest.eb.com/, britannica.png
+7, standaard, ImageQuest, https://quest.eb.com/, britannica.png
 7, standaard, Qlik, https://qv.hhs.nl/, qlikview.jpg
 
 8, standaard, github, https://www.github.com/hhs-tn, github.png

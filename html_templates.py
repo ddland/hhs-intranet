@@ -3,7 +3,7 @@ from string import Template #safe option
 template_card = Template("""
 <a class="card" href="$url" target="_blank">
     <figure class="card__thumbnail">
-        <img src="afbeeldingen/$img">
+        <img alt="$img" src="afbeeldingen/$img">
     </figure>
     <div class="text">$text</div>
 </a>
@@ -13,8 +13,8 @@ template_card = Template("""
 template_card_form = Template("""
 <div class="card">
     <a href="$url" target="_blank">
-    <figure class=card__thumbnail">
-        <img src="afbeeldingen/$img">
+    <figure class="card__thumbnail">
+        <img alt="$img" src="afbeeldingen/$img">
     </figure>
     </a>
     <div class="formtext">$text</div> 
@@ -28,11 +28,14 @@ template_footer = Template("""
 """
 )
 
-template_header = Template("""
-<!DOCTYPE html>
-<html>
+template_header = Template("""<!DOCTYPE html>
+<html lang="nl">
 <head>
+<meta charset="utf-8">
 <title> Intranet HHS ($user) </title>
+<link rel="icon" 
+      type="image/png" 
+      href="favicon.ico">
 <style>
 .card-container {
     display: grid;
@@ -98,9 +101,6 @@ body {
     text-decoration: none;
     text-align: center;
     transition: .3s ease-out;
-    &:hover {
-        background-color: darken(black, 100%);
-    }
 }
 
 form input {
@@ -131,7 +131,7 @@ img {
 </head>
 <body translate="no">
 <div style="color:rgb(158, 167, 0);text-align:center;" >Intranet links voor: $user</div>
-<section class="card-container">
+<div class="card-container"> 
 """)
 
 

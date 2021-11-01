@@ -92,7 +92,7 @@ body {
 
 .text {
     display: block; 
-    background-color: rgb(158, 167, 0);
+    background-color: $backgroundcolor;
     padding: 0px 5px 0px 5px;
     min-width: 8em;
     word-wrap: break-word;
@@ -109,7 +109,7 @@ form input {
 
 .formtext {
     display: block;
-    background-color: rgb(158, 167, 0);
+    background-color: $backgroundcolor;
     padding: 0px;
 }
 
@@ -130,7 +130,7 @@ img {
 </style>
 </head>
 <body translate="no">
-<div style="color:rgb(158, 167, 0);text-align:center;" >Intranet links voor: $user</div>
+<div style="color:$backgroundcolor;text-align:center;" >Intranet links voor: $user</div>
 <div class="card-container"> 
 """)
 

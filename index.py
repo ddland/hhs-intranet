@@ -2,9 +2,14 @@
 
 import cgi
 #import cgitb; cgitb.enable()
-import urllib
+from urllib import parse
 import sys
 import html_templates
+import re
+
+
+bgcolor = "rgba(158, 167, 0, 0.5)"
+bgcolordark = "rgba(158, 167, 0)"
 
 print("Content-type: text/html")
 print()
@@ -54,7 +59,7 @@ def write_htmlgrid(grid, maxrows, numbercols, outputfile=sys.stdout):
                 print(line[1], file=outputfile)
                 nrows +=1
         while nrows < maxrows:
-            print("<div class='card' style='background-color: rgba(158, 167, 0, 0.5);'></div>", file=outputfile)
+            print("<div class='card' style='background-color: %s;'></div>" %(bgcolor), file=outputfile)
             nrows +=1
         
 def add_userdata(username, data, grid):
@@ -63,42 +68,59 @@ def add_userdata(username, data, grid):
     parse_datafile(data, grid)
 
 
-def print_url(data):
-    if data.find('url=') < 0:
-        print('')
-    else:
-        safe, url = data.split('url=')
-        url = urllib.parse.unquote(url)
+def fix_url(url):
+    ret = ""
+    if url.find('url=') >= 0:
+        safe, url = url.split('url=')
+        url = parse.unquote(url)
         url = url.split('&')[0]
         url = url.strip()
-        url = url.lstrip()
-        http = None
-        if url[0:4].lower() == 'http':
-            http = True
-        if http:
-            print('<a href="%s" target=_blank>%s</a><br/>'%(url,url))
-        else:
-            print('<a href="http://%s", target="_blank">%s</a><br/>'%(url,url))
-        return url
+        ret = url.lstrip()
+    return " %s " %(ret), ret
 
 
-def parse_form(blob):
-    urls = []
-    data = blob.split()
-    print("<p>Full text </p>")
-    print("""<div class="full-row", style="background-color:rgba(158, 167, 0, 0.5);">""")
-    for line in data:
-        if line[0:4] == 'http':
-            urls.append(print_url(line))
+def find_urls(blob):
+    p = re.compile("https([^\s]+)")
+    pos_urls = []
+    start = 0
+    i = 0
+    all_urls = []
+    while i < 100:
+        res = re.search(p, blob[start:])
+        if not res:
+            break
         else:
-            line =line.encode('ascii', errors='ignore').decode('ascii')
-            print('%s' %str(line), end=' ')
-    print("")
-    print("</div>")
-    print("""<div class="full-row", style="background-color:rgba(158, 167, 0, 0.5);">""")
-    print("<p>URLS:</p>")
-    for line in urls:
-        print(line, "<br>")
+            sp1 = res.span()
+            pos_urls.append((sp1[0]+start, sp1[1]+start))
+            start += sp1[1]
+        i+= 1
+    start = 0
+    data = ""
+    for pos in pos_urls:
+        data += blob[start:pos[0]]
+        urls = fix_url(blob[pos[0]:pos[1]])
+        all_urls.append(urls[1])
+        data += urls[0]
+        start = pos[1]
+    data += blob[start:]
+    return data, all_urls
+
+def print_urls(blob):
+    data, urls = find_urls(blob)
+    data = data.replace("\n", "<br>")
+    data = data.replace("\r", "")
+    data = data.encode('ascii', errors='ignore')
+    print("""<p>Full text </p>
+<div class="full-row", style="background-color:{bgcolor};">
+{data}
+</div>
+<p>URLS:</p>
+<div class="full-row", style="background-color:{bgcolor};">
+""".format(data=data.decode(), bgcolor=bgcolor))
+    for url in urls:
+        print("""<a href="%s" target="_blank">%s</a><br>""" %(url, url))
+    print("""</div>""")
+
 
 if __name__ == "__main__":
     form = cgi.FieldStorage()
@@ -122,13 +144,16 @@ if __name__ == "__main__":
 
 
     user = "TN"
-    if "user" in form.keys(): # usersettings file detected!
+    if "user" in form.keys(): # usersettings file request detected!
         user = form.getvalue("user")
         if isinstance(user, str):
             if user == "derek":
                 add_userdata("derek", data, grid)
             elif user == "voorbeeld":
                 add_userdata("voorbeeld", data, grid)
+            elif user == "sanne":
+                bgcolor = "rgba(238, 106, 167, 0.5)"
+                bgcolordark = "rgba(238, 106, 167)"
             else:
                 user = "TN"
 
@@ -142,27 +167,28 @@ if __name__ == "__main__":
         maxrows4 = maxrows*4,
         maxrows8 = maxrows*6,
         user = user.title(),
+	backgroundcolor = bgcolordark,
         ), file=htmloutput)
 
     write_htmlgrid(grid, maxrows, numbercols, htmloutput)
     print("</div> <!-- card-container -->", file=htmloutput) 
 
     print(r'''
-<div class="full-row" style="background-color:rgba(158, 167, 0, 0.5);">
-    Verwijder safelinks: 
+<div class="full-row" style="background-color:{bgcolor};">
     <form method="post">
-        <input type="text" style="height:100px;" name="blob"/>
+        <input type="submit" value="Verwijder safelinks" style="background-color:{bgcolor};"> 
+        <textarea wrap="hard" rows=2 style="height:100px;width:100%" name="blob"> </textarea>
     </form>
 </div>
-    ''', file=htmloutput)
+    '''.format(bgcolor=bgcolor), file=htmloutput)
 
     if "blob" in form.keys():
         blob = form["blob"]
-        parse_form(blob.value)
+        print_urls(blob.value)
 
     print("""
-<div class="fullrow" style="background-color:rgba(158, 167, 0, 0.5);"> 
+<br><div class="fullrow" style="background-color:{bgcolor};"> 
 Aanpassingen of gepersonaliseerde omgeving? <a href="mailto:d.d.land@hhs.nl?subject=intranet website">Stuur een mailtje!</a>
-</div>""", file=htmloutput)
+</div>""".format(bgcolor=bgcolor), file=htmloutput)
 
     print(html_templates.template_footer.substitute(), file=htmloutput)

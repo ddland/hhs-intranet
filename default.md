@@ -17,12 +17,12 @@
 3, standaard, Mijn Serviceplein, https://sap-apps.hhs.nl/sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchpad.html?sap-language=NL, MijnServiceplein.jpg
 3, standaard, wijzig wachtwoord, https://webforms.hhs.nl/private/password/wijzig-wachtwoord.php, wachtwoord.png
 
-4, standaard, sharepoint TN, https://dehaagsehogeschool.sharepoint.com/sites/TIS_TN-VT, sharepointTN.png
-4, standaard, sharepoint TIS, https://dehaagsehogeschool.sharepoint.com/sites/pdc/nl/TIS, sharepointTIS.png
-4, standaard, studentennet, https://dehaagsehogeschool.sharepoint.com/sites/studentennet, studentennet.jpg
+4, standaard, TN Onderwijs, https://dehaagsehogeschool.sharepoint.com/sites/TNOnderwijs_groups, sharepoint.png
+4, standaard, TN Overleg, https://dehaagsehogeschool.sharepoint.com/sites/TNOverleg_groups, sharepoint.png
+4, standaard, sharepoint TN, https://dehaagsehogeschool.sharepoint.com/sites/TeamTN_groups, sharepointTN.png
 4, standaard, studentennet TN, https://dehaagsehogeschool.sharepoint.com/sites/TIS_TN-VT, studentennetTN.jpg
 
-5, standaard, Medezeggenschap, https://dehaagsehogeschool.sharepoint.com/sites/Organisatie/SitePages/medezeggenschap.aspx, medezeggenschap.png
+5, standaard, Medezeggen-schap, https://dehaagsehogeschool.sharepoint.com/sites/Organisatie/SitePages/medezeggenschap.aspx, medezeggenschap.png
 5, form, <form target="_blank" method="get" action="https://dehaagsehogeschool.sharepoint.com/sites/medewerkersnet/_layouts/15/search.aspx"> <input  type="text" placeholder="zoek in alles" name="q"></form>, https://dehaagsehogeschool.sharepoint.com/sites/medewerkersnet, wiewatwaar.jpg
 5, form, <form target="_blank" method="get" action="https://dehaagsehogeschool.sharepoint.com/sites/medewerkersnet/_layouts/15/search.aspx/people"> <input  type="text" placeholder="zoek collega" name="q"></form>, https://dehaagsehogeschool.sharepoint.com/sites/medewerkersnet, wiewatwaar.jpg
 

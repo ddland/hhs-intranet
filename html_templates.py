@@ -10,6 +10,16 @@ template_card = Template("""
 """
 )
 
+template_card_extern = Template("""
+<a class="card" href="$url" target="_blank">
+    <figure class="card__thumbnail">
+        <img alt="$img" src="afbeeldingen/$img">
+    </figure>
+    <div style="background-color:purple;" class="text">$text</div>
+</a>
+"""
+)
+
 template_card_form = Template("""
 <div class="card">
     <a href="$url" target="_blank">

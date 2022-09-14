@@ -28,6 +28,8 @@ def parse_datafile(data, grid):
             cols[ii] = col.strip()
         if cols[1] == 'standaard':
             htmlstring = [cols[1],html_templates.template_card.substitute(url=cols[3], img=cols[4], text=cols[2])]
+        elif cols[1] == 'extern':
+            htmlstring = [cols[1],html_templates.template_card_extern.substitute(url=cols[3], img=cols[4], text=cols[2])]
         elif cols[1] == 'form':
             htmlstring = [cols[1],html_templates.template_card_form.substitute(url=cols[3], img=cols[4], text=cols[2])]
         elif cols[1] == 'delete':
@@ -152,8 +154,8 @@ if __name__ == "__main__":
             elif user == "voorbeeld":
                 add_userdata("voorbeeld", data, grid)
             elif user == "sanne":
-                bgcolor = "rgba(238, 106, 167, 0.5)"
-                bgcolordark = "rgba(238, 106, 167)"
+                bgcolordark = "rgba(160,32,240)"
+                bgcolor = "rgba(238, 106, 167)"
             else:
                 user = "TN"
 

@@ -156,6 +156,10 @@ if __name__ == "__main__":
             elif user == "sanne":
                 bgcolordark = "rgba(160,32,240)"
                 bgcolor = "rgba(238, 106, 167)"
+            elif user == "thomas":
+                bgcolordark = "rgba(44,146,68)"
+                bgcolor = "rgba(133, 246, 220)"
+                add_userdata("thomas", data, grid)
             else:
                 user = "TN"
 

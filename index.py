@@ -157,8 +157,8 @@ if __name__ == "__main__":
                 bgcolordark = "rgba(160,32,240)"
                 bgcolor = "rgba(238, 106, 167)"
             elif user == "thomas":
-                bgcolordark = "rgba(44,146,68)"
-                bgcolor = "rgba(133, 246, 220)"
+                bgcolordark = "rgba(0, 172, 193, 0.9)"
+                bgcolor = "rgba(178, 235, 242, 0.9)"
                 add_userdata("thomas", data, grid)
             else:
                 user = "TN"

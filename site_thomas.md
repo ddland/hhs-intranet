@@ -37,6 +37,7 @@
 6, delete
 6, standaard, Blackboard, https://blackboard.hhs.nl, blackboard.jpg
 6, standaard, wijzig wachtwoord, https://webforms.hhs.nl/private/password/wijzig-wachtwoord.php, wachtwoord.png
+6, standaard, OnStage, https://hhs-onstage.xebic.com/, onstage.jpg
 
 7, delete
 

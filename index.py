@@ -6,7 +6,7 @@ from urllib import parse
 import sys
 import html_templates
 import re
-
+import glob
 
 bgcolor = "rgba(158, 167, 0, 0.5)"
 bgcolordark = "rgba(158, 167, 0)"
@@ -20,9 +20,11 @@ def parse_datafile(data, grid):
         if line[0] == "#" or line.isspace():
             continue
         cols = line.split(',')
+        if len(cols) not in [2,5]:
+            continue	
         colnum = int(cols[0])
         deletecolumn = False
-
+	
         # cleanup whitespace
         for ii, col in enumerate(cols):
             cols[ii] = col.strip()
@@ -133,9 +135,11 @@ if __name__ == "__main__":
 
     if "sharepoint" in form.keys(): # sharepoint side, geen default!
         sp = form.getvalue("sharepoint")
+        sharepoints = glob.glob('sharepoint/*')
         if isinstance(sp, str):
-            if sp == "derek":
-                with open("sharepoint/sharepoint_derek.md", "r") as fh:
+            name = 'sharepoint/sharepoint_%s.md' %(sp)
+            if name in sharepoints:
+                with open(name, "r") as fh:
                     data = fh.readlines()
                 parse_datafile(data, grid)
 

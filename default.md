@@ -21,6 +21,7 @@
 3, standaard, TN Overleg, https://dehaagsehogeschool.sharepoint.com/sites/TNOverleg_groups, sharepoint.png
 3, standaard, sharepoint TN, https://dehaagsehogeschool.sharepoint.com/sites/TeamTN_groups, sharepointTN.png
 3, standaard, studentennet TN, https://dehaagsehogeschool.sharepoint.com/sites/TIS_TN-VT, studentennetTN.jpg
+3, standaard, Fac. TIS, https://dehaagsehogeschool.sharepoint.com/sites/FAC_TIS, sharepoint.png
 
 4, standaard, Medezeggen-schap, https://dehaagsehogeschool.sharepoint.com/sites/Organisatie/SitePages/medezeggenschap.aspx, medezeggenschap.png
 4, form, <form target="_blank" method="get" action="https://dehaagsehogeschool.sharepoint.com/sites/medewerkersnet/_layouts/15/search.aspx"> <input  type="text" placeholder="zoek in alles" name="q"></form>, https://dehaagsehogeschool.sharepoint.com/sites/medewerkersnet, wiewatwaar.jpg
@@ -34,6 +35,7 @@
 6, standaard, milgrom (jupyter), https://milgrom.tn.hhs.nl/jupyterhub, jupyter.png
 
 7, standaard, bibliotheek, https://www.dehaagsehogeschool.nl/studievoorzieningen/bibliotheek, bibliotheek.jpg
+7, standaard, sci-hub, https://sci-hub.se, sci-hub.png
 7, standaard, ImageQuest, https://quest.eb.com/, britannica.png
 7, standaard, Qlik, https://qv.hhs.nl/, qlikview.jpg
 

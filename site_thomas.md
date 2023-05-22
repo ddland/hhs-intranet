@@ -25,7 +25,7 @@
 4, standaard, Medezeggenschap, https://dehaagsehogeschool.sharepoint.com/sites/Organisatie/SitePages/medezeggenschap.aspx, medezeggenschap.png
 
 5, delete
-5, standaard, myPrint, https://print.hhs.nl/RicohmyPrint/Main.aspx, myprint_icon.png
+5, standaard, myPrint, https://print.hhs.nl/RicohmyPrint/Main.aspx, myprinticon.png
 5, standaard, Milgrom (jupyter), https://milgrom.tn.hhs.nl/jupyterhub, jupyter.png
 5, standaard, Bibliotheek, https://www.dehaagsehogeschool.nl/studievoorzieningen/bibliotheek, bibliotheek.jpg
 

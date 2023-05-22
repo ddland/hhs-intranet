@@ -1,5 +1,5 @@
 # col, type, name, url, image
-0, form, <form target="_blank" method="get" action="https://mytimetable.hhs.nl/link"> <input type="hidden" name="timetable.type" value="room"> <input  type="text" placeholder="Lokaal" name="timetable.key"></form>, https://mytimetable.hhs.nl/schedule, AlgLesTentRstr.jpg
+0, form, <form target="_blank" method="get" action="https://mytimetable.hhs.nl/link"> <input type="hidden" name="timetable.type" value="room"> <input type="hidden" name="ignoreNotFound" value="true"> <input type="hidden" name="ignoreEmpty" value="true"><input  type="text" placeholder="Lokaal" name="timetable.key"></form>, https://mytimetable.hhs.nl/schedule, AlgLesTentRstr.jpg
 #0, standaard, MyTimeTable, https://mytimetable.hhs.nl/schedule, AlgLesTentRstr.jpg
 0, standaard, TermTime, https://ttportalhhs1.com/HHs2223/ADlogin.html, ReserverenOndRmt.jpg
 0, standaard, brightspace, https://brightspace.hhs.nl, brightspace.png

@@ -17,7 +17,7 @@
 3, delete
 3, form, <form target="_blank" method="get" action="https://mytimetable.hhs.nl/link"> <input type="hidden" name="timetable.type" value="room"> <input  type="text" placeholder="Lokaal" name="timetable.key"></form>, https://mytimetable.hhs.nl/schedule, AlgLesTentRstr.jpg
 3, standaard, vergaderruimten, https://hhs.topdesk.net/tas/public/ssp/content/page/locationreservationplanner, reserveren_vergaderruimte.png
-3, standaard, reserveren ruimten, https://ttportalhhs1.com/HHs2223/ADlogin.html, ReserverenOndRmt.jpg
+3, standaard, reserveren ruimten, https://ttportalhhs1.com/HHs2324/ADlogin.html, ReserverenOndRmt.jpg
 
 4, delete
 4, standaard, TIS TN-VT, https://dehaagsehogeschool.sharepoint.com/sites/TIS_TN-VT, studentennetTN.jpg

@@ -22,7 +22,7 @@
 4, delete
 4, standaard, TIS TN-VT, https://dehaagsehogeschool.sharepoint.com/sites/TIS_TN-VT, studentennetTN.jpg
 4, standaard, Evaluaties, https://evaluaties.hhs.nl/, DiCe.jpg
-4, standaard, Medezeggenschap, https://dehaagsehogeschool.sharepoint.com/sites/Organisatie/SitePages/medezeggenschap.aspx, medezeggenschap.png
+4, standaard, Medezeggenschap, https://dehaagsehogeschool.sharepoint.com/sites/StudentenOrganisatie/SitePages/Medezeggenschap-2023.aspx, medezeggenschap.png
 
 5, delete
 5, standaard, myPrint, https://print.hhs.nl/RicohmyPrint/Main.aspx, myprint_icon.png

@@ -1,7 +1,7 @@
 # col, type, name, url, image
 0, form, <form target="_blank" method="get" action="https://mytimetable.hhs.nl/link"> <input type="hidden" name="timetable.type" value="room"> <input type="hidden" name="ignoreNotFound" value="true"> <input type="hidden" name="ignoreEmpty" value="true"><input  type="text" placeholder="Lokaal" name="timetable.key"></form>, https://mytimetable.hhs.nl/schedule, AlgLesTentRstr.jpg
 #0, standaard, MyTimeTable, https://mytimetable.hhs.nl/schedule, AlgLesTentRstr.jpg
-0, standaard, TermTime, https://ttportalhhs1.com/HHs2324/ADlogin.html, ReserverenOndRmt.jpg
+0, standaard, TermTime, https://ttportalhhs1.com/HHs2425/ADlogin.html, ReserverenOndRmt.jpg
 0, standaard, brightspace, https://brightspace.hhs.nl, brightspace.png
 0, standaard, osiris, https://docent.osiris.hhs.nl/, osirisdocent.jpg
 0, standaard, onstage, https://hhs-onstage.xebic.com/, onstage.jpg
@@ -17,7 +17,7 @@
 2, standaard, iFrontoffice, https://hhs.topdesk.net/tas/public/, iFrontOffice.jpg
 2, standaard, Mijn Serviceplein, https://sap-apps.hhs.nl/sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchpad.html?sap-language=NL, MijnServiceplein.jpg
 2, standaard, wijzig wachtwoord, https://webforms.hhs.nl/private/password/wijzig-wachtwoord.php, wachtwoord.png
-2, standaard, myPrint, https://print.hhs.nl/RicohmyPrint/Main.aspx, myprinticon.png
+2, standaard, myPrint, https://myprint.hhs.nl/, myprinticon.png
 
 3, standaard, TN Onderwijs, https://dehaagsehogeschool.sharepoint.com/sites/TNOnderwijs_groups, sharepoint.png
 3, standaard, TN Overleg, https://dehaagsehogeschool.sharepoint.com/sites/TNOverleg_groups, sharepoint.png
@@ -46,6 +46,7 @@
 8, standaard, github, https://www.github.com/hhs-tn, github.png
 8, standaard, Mastering Physics, https://portal.mypearson.com, pearson.jpg
 8, standaard, Docker, https://hub.docker.com/, docker.jpg
+8, standaard, IoTroam, https://iotroam.nl/, iotroam.jpg
 
 9, standaard, URL shortener, https://edu.nl/manage/, surf_url.png
 9, standaard, FileSender, https://filesender.surf.nl/, surffilesender.png

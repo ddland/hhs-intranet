@@ -7,12 +7,14 @@
 1, standaard, TN Onderwijs, https://dehaagsehogeschool.sharepoint.com/sites/TNOnderwijs_groups, sharepoint.png
 1, standaard, TN Overleg, https://dehaagsehogeschool.sharepoint.com/sites/TNOverleg_groups, sharepoint.png
 1, standaard, TIS OER OLP, https://dehaagsehogeschool.sharepoint.com/sites/OEROLPTIS_groups, sharepoint.png
+1, standaard, TN Curve, https://dehaagsehogeschool.sharepoint.com/sites/TNCurV_groups, sharepoint.png
 
 2, standaard, Medezeggen-schap, https://dehaagsehogeschool.sharepoint.com/sites/Organisatie/SitePages/medezeggenschap.aspx, sharepoint.png
 2, standaard, TN OC Openbaar, https://dehaagsehogeschool.sharepoint.com/sites/OCTNopenbaar, sharepoint.png
 2, standaard, TN OC, https://dehaagsehogeschool.sharepoint.com/sites/octn, sharepoint.png
-
+2, standaard, PhD aanvraag, https://dehaagsehogeschool.sharepoint.com/sites/PhD-Derek_groups, sharepoint.png
 3, standaard, SSS, https://dehaagsehogeschool.sharepoint.com/sites/lectoraatsmartsensorsystems_groups, sharepoint.png
+3, standaard, SSS data, https://dehaagsehogeschool.sharepoint.com/sites/SSS_data_groups, sharepoint.png
 3, standaard, DOF, https://dehaagsehogeschool.sharepoint.com/sites/DigitalOperationsFinance_groups, sharepoint.png
 3, standaard, OutPut, https://dehaagsehogeschool.sharepoint.com/sites/OnderzoekLectoraten, sharepoint.png
 
@@ -24,14 +26,16 @@
 5, standaard, PrimaVera, https://dehaagsehogeschool.sharepoint.com/sites/primavera_groups, sharepoint.png
 5, standaard, PrimaFoto, https://dehaagsehogeschool.sharepoint.com/sites/PrimaVera_TNFO_2022_groups, sharepoint.png
 5, standaard, PrimaVera WE, https://dehaagsehogeschool.sharepoint.com/sites/PrimaVera_WE_groups, sharepoint.png
+5, standaard, WOB, https://dehaagsehogeschool.sharepoint.com/sites/NROCallMBOHBO_groups, sharepoint.png
 
 6, standaard, NextGEM, https://dehaagsehogeschool.sharepoint.com/sites/NextGEM-Goliat-EMF-fieldwork_May2022_groups, sharepoint.png
 6, standaard, NextGem EU,https://dehaagsehogeschool.sharepoint.com/sites/NextGEM_EU_Horizon_groups, sharepoint.png
 6, standaard, NextGem TUD,https://dehaagsehogeschool.sharepoint.com/sites/NextGEM_THUAS_TUD_groups, sharepoint.png
+6, standaard, NextGem EU,https://repo.nextgem.eu, eu.png
 
 7, standaard, Fijnstof, https://dehaagsehogeschool.sharepoint.com/sites/AWE-fijnstof-RIVM_groups, sharepoint.png
 7, standaard, EMV, https://dehaagsehogeschool.sharepoint.com/sites/EMV_HHs_groups, sharepoint.png
 7, standaard, EU OSHA, https://dehaagsehogeschool.sharepoint.com/sites/EUOSHA_groups, sharepoint.png
-
+7, standaard, Future Work, https://dehaagsehogeschool.sharepoint.com/sites/RaakPROFutureofWorkMIND_groups, sharepoint.png
 8, standaard, MedTech2022, https://dehaagsehogeschool.sharepoint.com/sites/NextGEM-MedTech2022_groups, sharepoint.png
 8, standaard, SDC, https://dehaagsehogeschool.sharepoint.com/sites/SensorDataChallenge_groups, sharepoint.png

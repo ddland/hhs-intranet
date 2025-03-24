@@ -15,8 +15,8 @@
 
 2, standaard, desktop, https://desktopmedewerkers-secureid.hhs.nl/, applicatieportaal.jpg
 2, standaard, iFrontoffice, https://hhs.topdesk.net/tas/public/, iFrontOffice.jpg
+2, standaard, HR2day, https://hr2day.hhs.nl/,hr2day.png
 2, standaard, Mijn Serviceplein, https://sap-apps.hhs.nl/sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchpad.html?sap-language=NL, MijnServiceplein.jpg
-2, standaard, wijzig wachtwoord, https://webforms.hhs.nl/private/password/wijzig-wachtwoord.php, wachtwoord.png
 2, standaard, myPrint, https://myprint.hhs.nl/, myprinticon.png
 
 3, standaard, TN Onderwijs, https://dehaagsehogeschool.sharepoint.com/sites/TNOnderwijs_groups, sharepoint.png
@@ -28,10 +28,11 @@
 4, standaard, Medezeggen-schap,https://dehaagsehogeschool.sharepoint.com/sites/StudentenOrganisatie/SitePages/Medezeggenschap-2023.aspx, medezeggenschap.png
 4, form, <form target="_blank" method="get" action="https://dehaagsehogeschool.sharepoint.com/sites/medewerkersnet/_layouts/15/search.aspx"> <input  type="text" placeholder="zoek in alles" name="q"></form>, https://dehaagsehogeschool.sharepoint.com/sites/medewerkersnet, wiewatwaar.jpg
 4, form, <form target="_blank" method="get" action="https://dehaagsehogeschool.sharepoint.com/sites/medewerkersnet/_layouts/15/search.aspx/people"> <input  type="text" placeholder="zoek collega" name="q"></form>, https://dehaagsehogeschool.sharepoint.com/sites/medewerkersnet, wiewatwaar.jpg
+4, standaard, wijzig wachtwoord, https://webforms.hhs.nl/private/password/wijzig-wachtwoord.php, wachtwoord.png
 
 5, standaard, webmail, https://outlook.office365.com/owa/?realm=hhs.nl, outlook.png
 5, standaard, teams, https://aka.ms/mstfw, teams.png,
-5, standaard, office365, https://www.office.com/?auth=2&home=1&from=ShellLogo, office365.jpg
+5, standaard, office365, https://m365.cloud.microsoft/?auth=2&home=1&from=ShellLogo, office365.jpg
 5, standaard, Quantum Delta NL TLC, https://quantumdelta.nl/talent-learning-centre-delft-leiden, quantumdelta.png
 
 6, standaard, BS support, https://brightspace-support.hhs.nl, d2lsupport.png
